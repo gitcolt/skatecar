@@ -16,6 +16,14 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader']
+            },
+            {
+                test: require.resolve('./node_modules/cannon/tools/threejs/CannonDebugRenderer.js'),
+                use: 'exports-loader?CannonDebugRenderer=THREE.CannonDebugRenderer'
+            },
+            {
+                test: require.resolve('./node_modules/cannon/tools/threejs/CannonDebugRenderer.js'),
+                use: 'imports-loader?THREE=three,CANNON=cannon'
             }
         ]
     }
